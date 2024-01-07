@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { ReactNode } from 'react';
-import styles from './page.module.css';
 
 export const metadata: Metadata = {
   title: 'x.com',
@@ -11,7 +10,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="ko">
       <body style={{ margin: 0 }}>
-        <div className={styles.container}>{children}</div>
+        <div>{children}</div>
       </body>
     </html>
   );

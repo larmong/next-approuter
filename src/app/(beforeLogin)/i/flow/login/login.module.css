@@ -1,49 +1,62 @@
-.container {
-  display: flex;
-  flex-direction: row;
+/* 로그인 */
+.loginWrapper {
+  position: fixed;
   width: 100dvw;
   height: 100dvh;
-  align-items: center;
-  color: #1f1f1f;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
 }
-
-.left {
-  flex: 1;
+.loginContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 650px;
+  border-radius: 30px;
+  background: #fff;
+  overflow: hidden;
+  padding: 30px 16px;
+}
+.loginContainer h3 {
+  font-size: 31px;
+  text-align: center;
+  letter-spacing: 2px;
+  margin: 0 0 50px 0;
+}
+.top {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.closed {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  padding: 10px;
+}
+.closed svg {
+  left: 25px;
+  top: 25px;
+}
 .logo {
-  width: 341px;
-  height: 308px;
+  margin: 20px 0;
+  width: 50px;
+  height: 50px;
 }
-.right {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  margin-left: 30px;
-}
-.right h1 {
-  font-weight: bold;
-  font-size: 64px;
-  margin: 48px 0;
-}
-.right h2 {
-  font-weight: bold;
-  font-size: 31px;
-  margin-bottom: 32px;
-}
-.right h3 {
-  margin: 40px 0 20px 0;
-}
+
 
 .maxWidth {
   width: 100%;
   max-width: 300px;
+  margin: 0 auto;
 }
 .maxWidth span {
   color: rgb(83, 100, 113);
-  font-size: 11px;
   display: inline-block;
   margin-top: 1px;
 }
@@ -51,6 +64,37 @@
   font-style: normal;
   color: rgb(29, 155, 240);
   cursor: pointer;
+}
+
+.idPwInput {
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgb(207, 217, 222);
+  border-radius: 5px;
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+.idPwInput:focus {
+  border: none;
+  outline: 1px solid rgb(29, 155, 240);
+}
+.idPwInput::placeholder {
+  color: #ccc;
+}
+
+.signup {
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding-top: 30px;
+  margin: 0 auto;
+}
+.signup a {
+  display: inline-block;
+  margin-left: 5px;
+  color: rgb(29, 155, 240);
+  text-decoration: none;
 }
 
 .google {
@@ -116,14 +160,15 @@
   align-items: center;
   justify-content: center;
 }
-.signup {
+
+
+.next {
   box-sizing: border-box;
-  margin-bottom: 5px;
   width: 100%;
   height: 40px;
   border: none;
   border-radius: 50px;
-  background: rgb(29, 155, 240);
+  background: rgb(15, 20, 25);
 
   color: #fff;
   font-weight: 500;
@@ -131,8 +176,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 20px;
 }
-.login {
+.forget {
   box-sizing: border-box;
   width: 100%;
   height: 40px;
@@ -141,10 +187,11 @@
   background: #fff;
 
 
-  color: rgb(29, 155, 240);
+  color: rgb(15, 20, 25);
   font-weight: 500;
   text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 10px;
 }
