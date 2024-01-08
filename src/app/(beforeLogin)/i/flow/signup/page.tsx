@@ -1,5 +1,5 @@
-import styles from './signup.module.css';
+import Signup from '@/app/(beforeLogin)/@modal/(.)i/flow/signup/page';
 
-export default function Signup() {
-  return <div className={styles.signupWrapper}>회원가입 모달</div>;
+export default function SignupPage() {
+  return <Signup />;
 }

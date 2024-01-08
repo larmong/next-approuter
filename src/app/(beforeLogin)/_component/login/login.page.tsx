@@ -1,25 +1,43 @@
-import styles from '@/app/page.module.css';
+'use client';
+
+import styles from './login.module.css';
+import { useState } from 'react';
 import Link from 'next/link';
 
-export default function Home() {
+export default function DefaultLogin() {
+  const [id, setId] = useState('');
+  const [password, setPassword] = useState('');
+  const [message, setMessage] = useState('');
+
+  const onSubmit = () => {};
+  const onClickClosed = () => {};
+  const onChangeId = () => {};
+  const onChangePassword = () => {};
+
   return (
-    <>
-      <div className={styles.left}>
-        <div className={styles.logo}>
-          <svg
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            className="r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-18jsvk2 r-rxcuwo r-1777fci r-m327ed r-494qqr"
-          >
-            <g>
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
-            </g>
-          </svg>
+    <div className={styles.loginWrapper}>
+      <div className={styles.loginContainer}>
+        <div className={styles.top}>
+          <div className={styles.closed} onClick={onClickClosed}>
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              className="r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-z80fyv r-19wmn03"
+            >
+              <g>
+                <path d="M10.59 12L4.54 5.96l1.42-1.42L12 10.59l6.04-6.05 1.42 1.42L13.41 12l6.05 6.04-1.42 1.42L12 13.41l-6.04 6.05-1.42-1.42L10.59 12z"></path>
+              </g>
+            </svg>
+          </div>
+          <div className={styles.logo}>
+            <svg viewBox="0 0 24 24" aria-label="X" role="img">
+              <g>
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+              </g>
+            </svg>
+          </div>
         </div>
-      </div>
-      <div className={styles.right}>
-        <h1>지금 일어나고 있는 일</h1>
-        <h2>지금 가입하세요.</h2>
+        <h3>X 로그인하기</h3>
         <div className={styles.maxWidth}>
           <div className={styles.google}>
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" className="LgbsSe-Bz112c">
@@ -54,18 +72,27 @@ export default function Home() {
             <span>Apple에서 가입하기</span>
           </div>
           <div className={styles.line}></div>
-          <Link href="/i/flow/signup" className={styles.signup}>
-            계정 만들기
-          </Link>
-          <span>
-            가입하시려면 <em>쿠키 사용</em>을 포함해 <em>이용약관</em>과<em> 개인정보 처리방침</em>에 동의해야 합니다.
-          </span>
-          <h3>이미 트위터에 가입하셨나요?</h3>
-          <Link href="/i/flow/login" className={styles.login}>
+          <input className={styles.idPwInput} type="text" onChange={onChangeId} placeholder="아이디를 입력해주세요." />
+          <input
+            className={styles.idPwInput}
+            type="password"
+            onChange={onChangePassword}
+            placeholder="비밀번호를 입력해주세요."
+          />
+          <Link href="/i/flow/login" className={styles.next} onClick={onSubmit}>
             로그인
           </Link>
+          <Link href="/" className={styles.forget}>
+            비밀번호를 잊으셨나요?
+          </Link>
+          <span className={styles.signup}>
+            계정이 없으신가요?
+            <em>
+              <Link href="/i/flow/signup">가입하기</Link>
+            </em>
+          </span>
         </div>
       </div>
-    </>
+    </div>
   );
 }
