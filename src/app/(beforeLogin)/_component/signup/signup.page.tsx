@@ -1,21 +1,16 @@
 'use client';
 
-import styles from './login.module.css';
+import styles from './signup.module.css';
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
-export default function DefaultLogin() {
-  const router = useRouter();
-
+export default function DefaultSignup() {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
 
   const onSubmit = () => {};
-  const onClickClosed = () => {
-    router.replace('/');
-  };
+  const onClickClosed = () => {};
   const onChangeId = () => {};
   const onChangePassword = () => {};
 
@@ -44,7 +39,7 @@ export default function DefaultLogin() {
             </svg>
           </div>
         </div>
-        <h3>X 로그인하기</h3>
+        <h3>X 가입하기</h3>
         <div className={styles.maxWidth}>
           <div className={styles.google}>
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" className="LgbsSe-Bz112c">
@@ -86,18 +81,9 @@ export default function DefaultLogin() {
             onChange={onChangePassword}
             placeholder="비밀번호를 입력해주세요."
           />
-          <Link href="/i/flow/login" className={styles.next} onClick={onSubmit}>
-            로그인
+          <Link href="/" className={styles.next} onClick={onSubmit}>
+            회원가입
           </Link>
-          <Link href="/" className={styles.forget}>
-            비밀번호를 잊으셨나요?
-          </Link>
-          <span className={styles.signup}>
-            계정이 없으신가요?
-            <em>
-              <Link href="/i/flow/signup">가입하기</Link>
-            </em>
-          </span>
         </div>
       </div>
     </div>

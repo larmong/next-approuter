@@ -1,5 +1,5 @@
-import styles from './signup.module.css';
+import DefaultSignup from '@/app/(beforeLogin)/_component/signup/signup.page';
 
 export default function Signup() {
-  return <div className={styles.signupWrapper}>회원가입 모달</div>;
+  return <DefaultSignup />;
 }
